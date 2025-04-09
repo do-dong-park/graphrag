@@ -9,5 +9,3 @@
 *.lock
 CODEOWNERS text eol=lf
 LICENSE text eol=lf
-.env
-*.json
