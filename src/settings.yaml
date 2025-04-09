@@ -8,14 +8,14 @@ models:
   default_chat_model:
     auth_type: api_key 
     api_key: ${GRAPHRAG_API_KEY} # set this in the generated .env file
-    api_base: http://localhost:1234/v1/
+    api_base: ${GRAPHRAG_API_BASE} # set this in the generated .env file
     type: openai_chat
-    model: gemma-3-12b-it
+    model: ${GRAPHRAG_CHAT_MODEL} # set this in the generated .env file
     
     model_supports_json: true # 만약 되면 true로 설정
     encoding_model: cl100k_base # automatically set by tiktoken if left undefined
     concurrent_requests: 25 # max number of simultaneous LLM requests allowed
-    async_mode: asyncio # or threaded 
+    async_mode: threaded # or threaded 
     retry_strategy: native
     max_retries: -1                   # set to -1 for dynamic retry logic (most optimal setting based on server response)
     tokens_per_minute: 0              # set to 0 to disable rate limiting
@@ -24,9 +24,9 @@ models:
   default_embedding_model:
     auth_type: api_key 
     api_key: ${GRAPHRAG_API_KEY}
-    api_base: http://localhost:1234/v1/
+    api_base: ${GRAPHRAG_API_BASE}
     type: openai_embedding
-    model: text-embedding-intfloat-multilingual-e5-large-instruct
+    model: ${GRAPHRAG_EMBEDDING_MODEL} # set this in the generated .env file
     
     encoding_model: cl100k_base # automatically set by tiktoken if left undefined
     model_supports_json: true # recommended if this is available for your model.
@@ -41,7 +41,7 @@ models:
 input:
   type: file # or blob
   file_type: json # [csv, text, json]
-  base_dir: "data/input/processed_json"
+  base_dir: "data/input/test_json"
 
 chunks:
   size: 1200
@@ -113,7 +113,7 @@ embed_graph:
   enabled: true # if true, will generate node2vec embeddings for nodes
 
 umap:
-  enabled: true # if true, will generate UMAP embeddings for nodes (embed_graph must also be enabled)
+  enabled: false # if true, will generate UMAP embeddings for nodes (embed_graph must also be enabled)
 
 snapshots:
   graphml: true

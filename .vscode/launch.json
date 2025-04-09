@@ -3,13 +3,21 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
+            "name": "Python Debugger: test.py",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "src.test"
+        },
+		{
 			"name": "Indexer",
 			"type": "debugpy",
 			"request": "launch",
 			"module": "poetry",
 			"args": [
-				"poe", "index",
-				"--root", "<path_to_ragtest_root_demo>"
+				"poe",
+				"index",
+				"--root",
+				"<path_to_ragtest_root_demo>"
 			],
 		},
 		{
@@ -18,10 +26,14 @@
 			"request": "launch",
 			"module": "poetry",
 			"args": [
-				"poe", "query",
-				"--root", "<path_to_ragtest_root_demo>",
-				"--method", "global",
-				"--query", "What are the top themes in this story",
+				"poe",
+				"query",
+				"--root",
+				"<path_to_ragtest_root_demo>",
+				"--method",
+				"global",
+				"--query",
+				"What are the top themes in this story",
 			]
 		},
 		{
@@ -30,10 +42,11 @@
 			"request": "launch",
 			"module": "poetry",
 			"args": [
-				"poe", "prompt-tune",
+				"poe",
+				"prompt-tune",
 				"--config",
 				"<path_to_ragtest_root_demo>/settings.yaml",
 			]
-		}
+		},
 	]
 }
