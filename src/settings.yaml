@@ -41,7 +41,7 @@ models:
 input:
   type: file # or blob
   file_type: json # [csv, text, json]
-  base_dir: "data/input/test_json"
+  base_dir: "data/input/processed_json"
 
 chunks:
   size: 1200

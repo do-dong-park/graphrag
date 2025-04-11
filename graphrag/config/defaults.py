@@ -236,7 +236,7 @@ class GlobalSearchDefaults:
     map_max_tokens: int = 1000
     reduce_max_tokens: int = 2000
     concurrency: int = 32
-    dynamic_search_llm: str = "gpt-4o-mini"
+    dynamic_search_llm: str = "gemma3:12b-mini"
     dynamic_search_threshold: int = 1
     dynamic_search_keep_parent: bool = False
     dynamic_search_num_repeats: int = 1

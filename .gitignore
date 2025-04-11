@@ -60,3 +60,5 @@ docsite/
 *.json
 *.png
 src/data/*
+src/prompts/*
+*.ipynb

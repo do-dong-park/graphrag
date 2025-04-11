@@ -41,7 +41,7 @@ async def run_index():
 
 
 async def main():
-    await run_index()
+    # await run_index()
     # LLM 설정
     print("🔧 LLM 초기화...")
     llm_config = GRAPHRAG_CONFIG.get_language_model_config("default_chat_model")
@@ -115,7 +115,7 @@ async def main():
     )
 
     # 쿼리 실행
-    query = "프론트 도어 체커 커버 앗세이 장착(RH)법을 생성해줘."
+    query = "프론트 도어 체커 커버 앗세이 장착(RH)법을 알려줘."
     print(f"🔍 전역 검색 쿼리 실행 중: {query}")
     try:
         result = await search_engine.search(query=query)
